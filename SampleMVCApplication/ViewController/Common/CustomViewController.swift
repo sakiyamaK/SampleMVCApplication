@@ -8,8 +8,24 @@
 
 import UIKit
 
-class CustomViewController: UIViewController {
-  //タブバーのアイコンを更新する場合はこれを継承先でoverrideする
+//tabbarのアイコンを指定した画像にするためのprotocol
+protocol ConfigTabBarItemProtocol: UIViewController {
+  var tabBarIcon: UIImage? { get }
+  func configureTabBarItem()
+}
+
+extension ConfigTabBarItemProtocol {
+  func configureTabBarItem() {
+    guard let _tabBarIcon = tabBarIcon else { return }
+    DLog(_tabBarIcon)
+    tabBarItem = UITabBarItem(title: "",
+                              image: _tabBarIcon.withRenderingMode(.alwaysOriginal),
+                              selectedImage: _tabBarIcon.withRenderingMode(.alwaysTemplate))
+  }
+}
+
+class CustomViewController: UIViewController, ConfigTabBarItemProtocol {
+
   var tabBarIcon: UIImage? { return nil }
 
   required init(coder aDecoder: NSCoder) {
@@ -25,19 +41,9 @@ class CustomViewController: UIViewController {
   convenience init() {
     self.init(nibName: nil, bundle: nil)
   }
-}
 
-private extension CustomViewController {
   //全てのUIViewControllerが通る初期化処理
-  func setup() {
+  private func setup() {
     configureTabBarItem()
-  }
-
-  func configureTabBarItem() {
-    guard let _tabBarIcon = tabBarIcon else { return }
-    DLog(_tabBarIcon)
-    tabBarItem = UITabBarItem(title: "",
-                              image: _tabBarIcon.withRenderingMode(.alwaysOriginal),
-                              selectedImage: _tabBarIcon.withRenderingMode(.alwaysTemplate))
   }
 }
