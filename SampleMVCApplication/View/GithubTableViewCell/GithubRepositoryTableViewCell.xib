@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GithubRepositoryTableViewCell" rowHeight="114" id="hxu-Vq-4vL" customClass="GithubRepositoryTableViewCell" customModule="SampleMVCApplication" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hxu-Vq-4vL" id="Ueg-RQ-r60">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZX7-yZ-5Qu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ZX7-yZ-5Qu" firstAttribute="top" secondItem="Ueg-RQ-r60" secondAttribute="top" id="1ad-I2-Ikd"/>
+                    <constraint firstAttribute="trailing" secondItem="ZX7-yZ-5Qu" secondAttribute="trailing" id="RAA-RR-8HW"/>
+                    <constraint firstItem="ZX7-yZ-5Qu" firstAttribute="leading" secondItem="Ueg-RQ-r60" secondAttribute="leading" id="TeQ-Jt-dxo"/>
+                    <constraint firstAttribute="bottom" secondItem="ZX7-yZ-5Qu" secondAttribute="bottom" id="bW8-BL-SZn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mainContainerView" destination="ZX7-yZ-5Qu" id="tLK-ZL-pm5"/>
+            </connections>
+            <point key="canvasLocation" x="79.710144927536234" y="46.205357142857139"/>
+        </tableViewCell>
+    </objects>
+</document>

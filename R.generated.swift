@@ -156,6 +156,48 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `GithubRepositoryTableViewCell`.
+    static let githubRepositoryTableViewCell = _R.nib._GithubRepositoryTableViewCell()
+    /// Nib `GithubRepositoryView`.
+    static let githubRepositoryView = _R.nib._GithubRepositoryView()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GithubRepositoryTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.githubRepositoryTableViewCell) instead")
+    static func githubRepositoryTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.githubRepositoryTableViewCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "GithubRepositoryView", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.githubRepositoryView) instead")
+    static func githubRepositoryView(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.githubRepositoryView)
+    }
+    #endif
+
+    static func githubRepositoryTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GithubRepositoryTableViewCell? {
+      return R.nib.githubRepositoryTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GithubRepositoryTableViewCell
+    }
+
+    static func githubRepositoryView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GithubRepositoryView? {
+      return R.nib.githubRepositoryView.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GithubRepositoryView
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `GithubRepositoryTableViewCell`.
+    static let githubRepositoryTableViewCell: Rswift.ReuseIdentifier<GithubRepositoryTableViewCell> = Rswift.ReuseIdentifier(identifier: "GithubRepositoryTableViewCell")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -175,6 +217,37 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _GithubRepositoryTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = GithubRepositoryTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "GithubRepositoryTableViewCell"
+      let name = "GithubRepositoryTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GithubRepositoryTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GithubRepositoryTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _GithubRepositoryView: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "GithubRepositoryView"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> GithubRepositoryView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? GithubRepositoryView
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {

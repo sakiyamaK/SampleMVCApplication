@@ -16,20 +16,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IZT-MK-ooY">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oMf-g6-2eM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjV-sb-OOE">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-xY-pCc">
+                                                <rect key="frame" x="16" y="6" width="382" height="37"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="69b-kB-sdR" id="x7Z-ja-wxj"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yZ7-xY-pCc" secondAttribute="trailing" constant="16" id="7dS-V4-z76"/>
+                                            <constraint firstAttribute="bottom" secondItem="yZ7-xY-pCc" secondAttribute="bottom" constant="6" id="Fqd-YX-6kC"/>
+                                            <constraint firstItem="yZ7-xY-pCc" firstAttribute="top" secondItem="mjV-sb-OOE" secondAttribute="top" constant="6" id="NrP-Rf-uFq"/>
+                                            <constraint firstItem="yZ7-xY-pCc" firstAttribute="leading" secondItem="mjV-sb-OOE" secondAttribute="leading" constant="16" id="gg6-iO-lu8"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IZT-MK-ooY">
+                                        <rect key="frame" x="0.0" y="49" width="414" height="803"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <sections/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="69b-kB-sdR" id="N9W-0e-4hq"/>
+                                            <outlet property="delegate" destination="69b-kB-sdR" id="bNd-uN-r9o"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IZT-MK-ooY" firstAttribute="top" secondItem="mjV-sb-OOE" secondAttribute="bottom" id="2FB-An-Cay"/>
+                                    <constraint firstItem="mjV-sb-OOE" firstAttribute="top" secondItem="oMf-g6-2eM" secondAttribute="top" id="8UH-2d-M4T"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vY9-M6-dgg" firstAttribute="trailing" secondItem="IZT-MK-ooY" secondAttribute="trailing" id="3Ud-D0-dKk"/>
-                            <constraint firstItem="IZT-MK-ooY" firstAttribute="top" secondItem="vY9-M6-dgg" secondAttribute="top" id="4uU-1u-ZsC"/>
-                            <constraint firstItem="vY9-M6-dgg" firstAttribute="bottom" secondItem="IZT-MK-ooY" secondAttribute="bottom" id="RU9-7m-ie4"/>
-                            <constraint firstItem="IZT-MK-ooY" firstAttribute="leading" secondItem="vY9-M6-dgg" secondAttribute="leading" id="kJx-lh-QZs"/>
+                            <constraint firstItem="oMf-g6-2eM" firstAttribute="top" secondItem="vY9-M6-dgg" secondAttribute="top" id="0H8-0j-4fc"/>
+                            <constraint firstItem="vY9-M6-dgg" firstAttribute="trailing" secondItem="oMf-g6-2eM" secondAttribute="trailing" id="1lQ-Ij-a18"/>
+                            <constraint firstAttribute="bottom" secondItem="oMf-g6-2eM" secondAttribute="bottom" id="CiD-CP-str"/>
+                            <constraint firstItem="oMf-g6-2eM" firstAttribute="leading" secondItem="aPg-ah-oFJ" secondAttribute="leading" id="h8X-hB-zzL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vY9-M6-dgg"/>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="yZ7-xY-pCc" id="xwH-fd-NWj"/>
+                        <outlet property="tableView" destination="IZT-MK-ooY" id="Mao-JS-6k8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSl-I0-Hax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -22,6 +22,9 @@ final class HomeCoordinator: Coordinator {
 
   func start(animated: Bool = true) {
     guard let vc = HomeViewController.makeFromStoryboard() else { return }
+    vc.tapCell = { repository in
+      DLog(repository.name)
+    }
     self.navigator?.pushViewController(vc, animated: animated)
   }
 }
