@@ -27,7 +27,8 @@ final class GithubAPI {
           let githubResponse = try? JSONDecoder().decode(GithubResponse.self, from: data),
           let models = githubResponse.items
           else {
-          DLog(String(data: response.data!, encoding: .utf8))
+            //レスポンスを出力
+//          DLog(String(data: response.data!, encoding: .utf8))
           success?([])
           return
         }

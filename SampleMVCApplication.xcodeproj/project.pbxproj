@@ -185,6 +185,7 @@
 		B6022CB024EE3CBB00D7C02D /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				B6AEFD2D24F0FE2F0045926D /* SettingHeader */,
 				B6022CB124EE3CC800D7C02D /* Setting.storyboard */,
 				B6022CB324EE3CF000D7C02D /* SettingViewController.swift */,
 			);
@@ -353,6 +354,13 @@
 				B6AEFD2924F00B680045926D /* GithubRepositoryTableViewCell.swift */,
 			);
 			path = GithubTableViewCell;
+			sourceTree = "<group>";
+		};
+		B6AEFD2D24F0FE2F0045926D /* SettingHeader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SettingHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

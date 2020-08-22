@@ -8,14 +8,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Home-->
         <scene sceneID="EBy-pj-thL">
             <objects>
-                <viewController id="69b-kB-sdR" customClass="HomeViewController" customModule="SampleMVCApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="69b-kB-sdR" customClass="HomeViewController" customModule="SampleMVCApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aPg-ah-oFJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0nq-Z8-Xga">
+                                <rect key="frame" x="197" y="484.5" width="20" height="20"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oMf-g6-2eM">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <subviews>
@@ -59,12 +62,15 @@
                         <constraints>
                             <constraint firstItem="oMf-g6-2eM" firstAttribute="top" secondItem="vY9-M6-dgg" secondAttribute="top" id="0H8-0j-4fc"/>
                             <constraint firstItem="vY9-M6-dgg" firstAttribute="trailing" secondItem="oMf-g6-2eM" secondAttribute="trailing" id="1lQ-Ij-a18"/>
+                            <constraint firstItem="0nq-Z8-Xga" firstAttribute="centerY" secondItem="IZT-MK-ooY" secondAttribute="centerY" id="8K2-9Y-hEf"/>
                             <constraint firstAttribute="bottom" secondItem="oMf-g6-2eM" secondAttribute="bottom" id="CiD-CP-str"/>
+                            <constraint firstItem="0nq-Z8-Xga" firstAttribute="centerX" secondItem="IZT-MK-ooY" secondAttribute="centerX" id="Whn-P8-q2R"/>
                             <constraint firstItem="oMf-g6-2eM" firstAttribute="leading" secondItem="aPg-ah-oFJ" secondAttribute="leading" id="h8X-hB-zzL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vY9-M6-dgg"/>
                     </view>
                     <connections>
+                        <outlet property="indicatorView" destination="0nq-Z8-Xga" id="3Ac-Kf-upT"/>
                         <outlet property="searchTextField" destination="yZ7-xY-pCc" id="xwH-fd-NWj"/>
                         <outlet property="tableView" destination="IZT-MK-ooY" id="Mao-JS-6k8"/>
                     </connections>

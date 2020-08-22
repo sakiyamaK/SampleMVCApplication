@@ -8,23 +8,85 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--Setting-->
         <scene sceneID="TZr-37-195">
             <objects>
-                <viewController id="Y6T-CX-7aF" customClass="SettingViewController" customModule="SampleMVCApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Setting" id="Y6T-CX-7aF" customClass="SettingViewController" customModule="SampleMVCApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ms-VK-6hq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpB-Oe-pX9">
-                                <rect key="frame" x="168.5" y="391.5" width="77" height="30"/>
-                                <state key="normal" title="ログアウト"/>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imk-vb-Xgo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adk-IC-4bG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="830"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cpz-qs-HL3">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="830"/>
+                                                <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qsc-IO-65L">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="MpK-gy-GZY"/>
+                                                        </constraints>
+                                                    </containerView>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nWJ-EF-EwH">
+                                                        <rect key="frame" x="0.0" y="200" width="414" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="Fdc-rF-X9O"/>
+                                                        </constraints>
+                                                    </containerView>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyr-GW-APU">
+                                                        <rect key="frame" x="0.0" y="400" width="414" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="7TX-h3-Ger"/>
+                                                        </constraints>
+                                                    </containerView>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8H2-Ob-nkG">
+                                                        <rect key="frame" x="0.0" y="600" width="414" height="200"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="H4k-GB-wi2"/>
+                                                        </constraints>
+                                                    </containerView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpB-Oe-pX9">
+                                                        <rect key="frame" x="0.0" y="800" width="414" height="30"/>
+                                                        <state key="normal" title="ログアウト"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Cpz-qs-HL3" secondAttribute="trailing" id="4iE-dw-kBr"/>
+                                            <constraint firstItem="Cpz-qs-HL3" firstAttribute="leading" secondItem="adk-IC-4bG" secondAttribute="leading" id="Ijy-g8-6Y7"/>
+                                            <constraint firstItem="Cpz-qs-HL3" firstAttribute="top" secondItem="adk-IC-4bG" secondAttribute="top" id="JpL-56-SAh"/>
+                                            <constraint firstItem="Cpz-qs-HL3" firstAttribute="leading" secondItem="adk-IC-4bG" secondAttribute="leading" id="Lk8-Vv-jXk"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cpz-qs-HL3" secondAttribute="bottom" id="UnW-wW-ozV"/>
+                                            <constraint firstAttribute="bottom" secondItem="Cpz-qs-HL3" secondAttribute="bottom" id="Wfy-1b-zZl"/>
+                                            <constraint firstAttribute="height" secondItem="Cpz-qs-HL3" secondAttribute="height" id="deg-GA-reX"/>
+                                            <constraint firstItem="Cpz-qs-HL3" firstAttribute="top" secondItem="adk-IC-4bG" secondAttribute="top" id="jE1-LH-tZV"/>
+                                            <constraint firstAttribute="trailing" secondItem="Cpz-qs-HL3" secondAttribute="trailing" id="uvi-6b-lx4"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="adk-IC-4bG" firstAttribute="trailing" secondItem="UQX-j8-KYG" secondAttribute="trailing" id="DaL-Ec-tXM"/>
+                                    <constraint firstItem="adk-IC-4bG" firstAttribute="bottom" secondItem="UQX-j8-KYG" secondAttribute="bottom" id="R6f-xa-say"/>
+                                    <constraint firstItem="adk-IC-4bG" firstAttribute="top" secondItem="UQX-j8-KYG" secondAttribute="top" id="Rlu-Ux-C7K"/>
+                                    <constraint firstItem="adk-IC-4bG" firstAttribute="width" secondItem="Dd9-EN-CjB" secondAttribute="width" id="UqQ-8j-z2Z"/>
+                                    <constraint firstItem="adk-IC-4bG" firstAttribute="leading" secondItem="UQX-j8-KYG" secondAttribute="leading" id="hfk-kj-PUv"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="UQX-j8-KYG"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Dd9-EN-CjB"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="MpB-Oe-pX9" firstAttribute="centerY" secondItem="0ms-VK-6hq" secondAttribute="centerY" id="ccA-Ob-NkU"/>
-                            <constraint firstItem="MpB-Oe-pX9" firstAttribute="centerX" secondItem="0ms-VK-6hq" secondAttribute="centerX" id="fAt-WX-HIt"/>
+                            <constraint firstItem="ek9-e0-LcE" firstAttribute="trailing" secondItem="imk-vb-Xgo" secondAttribute="trailing" id="AEe-Xf-IhX"/>
+                            <constraint firstItem="ek9-e0-LcE" firstAttribute="bottom" secondItem="imk-vb-Xgo" secondAttribute="bottom" id="Kn8-R9-EPR"/>
+                            <constraint firstItem="imk-vb-Xgo" firstAttribute="top" secondItem="ek9-e0-LcE" secondAttribute="top" id="Zd7-LK-lLh"/>
+                            <constraint firstItem="imk-vb-Xgo" firstAttribute="leading" secondItem="ek9-e0-LcE" secondAttribute="leading" id="bh5-S0-UAT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ek9-e0-LcE"/>
                     </view>

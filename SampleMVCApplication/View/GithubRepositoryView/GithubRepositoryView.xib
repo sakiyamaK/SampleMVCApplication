@@ -42,7 +42,6 @@
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="tcf-Cb-h54" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="GdZ-6F-fTm"/>
                 <constraint firstItem="tcf-Cb-h54" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Jzq-t2-bU5"/>

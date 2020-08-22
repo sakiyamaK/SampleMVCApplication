@@ -16,6 +16,11 @@ final class HomeViewController: CustomViewController {
 
   var repositories: [GithubRepositoryModel] = []
 
+  @IBOutlet private weak var indicatorView: UIActivityIndicatorView! {
+    didSet {
+      indicatorView.stopAnimating()
+    }
+  }
   @IBOutlet private weak var searchTextField: UITextField!
   @IBOutlet private weak var tableView: UITableView! {
     didSet {
@@ -36,9 +41,13 @@ extension HomeViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
     DLog()
     guard let _searchWord = textField.text else { return }
+    tableView.alpha = 0
+    indicatorView.startAnimating()
     GithubAPI.shared.get(searchWord: _searchWord, isDesc: true, success: {[weak self] (repositories) in
       guard let _self = self else { return }
+      _self.indicatorView.stopAnimating()
       _self.repositories = repositories
+      _self.tableView.alpha = 1
       _self.tableView.reloadData()
     }) { (error) in
       DLog(error)

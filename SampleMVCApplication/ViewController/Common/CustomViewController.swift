@@ -24,7 +24,18 @@ extension ConfigTabBarItemProtocol {
   }
 }
 
-class CustomViewController: UIViewController, ConfigTabBarItemProtocol {
+//navigationbarに関するのprotocol
+protocol ConfigNavigationBarItemProtocol: UIViewController {
+  func configureNavigationBarItem()
+}
+
+extension ConfigNavigationBarItemProtocol {
+  func configureNavigationBarItem() {
+    self.navigationItem.title = title
+  }
+}
+
+class CustomViewController: UIViewController, ConfigTabBarItemProtocol, ConfigNavigationBarItemProtocol {
 
   var tabBarIcon: UIImage? { return nil }
 
@@ -45,5 +56,6 @@ class CustomViewController: UIViewController, ConfigTabBarItemProtocol {
   //全てのUIViewControllerが通る初期化処理
   private func setup() {
     configureTabBarItem()
+    configureNavigationBarItem()
   }
 }
