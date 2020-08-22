@@ -28,6 +28,11 @@ final class StartViewController: CustomViewController {
     guard let vc = R.storyboard.start.instantiateInitialViewController() else { return nil }
     return vc
   }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    self.navigationController?.setNavigationBarHidden(true, animated: false)
+  }
 }
 
 //extensionをprivateにすることでこの中のfuncを全部privateにする
