@@ -38,6 +38,7 @@ extension HomeViewController: UITextFieldDelegate {
   func textFieldDidBeginEditing(_ textField: UITextField) {
     DLog()
   }
+
   func textFieldDidEndEditing(_ textField: UITextField) {
     DLog()
     guard let _searchWord = textField.text else { return }

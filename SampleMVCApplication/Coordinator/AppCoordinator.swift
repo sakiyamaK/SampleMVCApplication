@@ -59,7 +59,7 @@ final class AppCoordinator: Coordinator {
       DLog("ログアウト")
       let logoutedNavigator = CustomNavigationController()
       window.rootViewController = logoutedNavigator
-      let nextCoordinator = StartCoordinator.init(navigator: logoutedNavigator)
+      let nextCoordinator = StartCoordinator(navigator: logoutedNavigator)
 
       nextCoordinator.start()
 

@@ -21,13 +21,11 @@ final class StartCoordinator: Coordinator {
   }
 
   func start(animated: Bool = true) {
-    DispatchQueue.main.async {
-      guard let vc = StartViewController.makeFromStoryboard() else { return }
-      vc.tappedLoginClousre = {
-        UserDefaults.standard.isLogined = true
-        NotificationCenter.default.post(name: .reStart, object: nil)
-      }
-      self.navigator?.pushViewController(vc, animated: animated)
+    guard let vc = StartViewController.makeFromStoryboard() else { return }
+    vc.tappedLoginClousre = {
+      UserDefaults.standard.isLogined = true
+      NotificationCenter.default.post(name: .reStart, object: nil)
     }
+    self.navigator?.pushViewController(vc, animated: animated)
   }
 }
